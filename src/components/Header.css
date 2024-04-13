@@ -1,0 +1,43 @@
+.Header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5db13;
+  padding: 0.5rem 0;
+  box-shadow: 4px 4px 8px #00000020;
+}
+.Header img {
+  height: 4rem;
+  width: auto;
+}
+.swhich {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.swhich > svg {
+  height: 1.5rem;
+  width: auto;
+}
+.swhich > label {
+  background-color: white;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.swhich > label > span {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background-color: #403dda;
+  transition: 0.5s;
+}
+.check-swich:checked + .slider {
+    transform: translateX(2.5rem);
+
+}
