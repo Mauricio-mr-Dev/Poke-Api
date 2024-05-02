@@ -9,10 +9,10 @@ function usePokemones() {
   const [verMas, setVerMas] = useState(true);
 
   const fetchPokemon = async (url) => {
+    
     const resp = await fetch(url);
     //Aca ya tenemos la informacion en formato json lista para mapear y extraer la informacion1|
     const infoPokemon = await resp.json();
-
     //Aca recuperamos las otras propiedades de los pokemonos
     const abilities = infoPokemon.abilities.map(a => a.ability.name)
     //Devuelvo un objeto con las propiepades name y base

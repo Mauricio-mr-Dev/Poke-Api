@@ -6,6 +6,7 @@ import { useState } from "react";
 import DetallePokemon from './DetallePokemon'
 import Buscador from "./Buscador";
 
+
 // {Este es un componente y recibe los parametros cuando hacemos el mapeo de los pokemones y este se llama dentro del map }
 function Pokemon({ id, name, src, verPokemon}) {
 
@@ -16,6 +17,7 @@ function Pokemon({ id, name, src, verPokemon}) {
       <p className="pokemon-titulo">
         <span># {id}</span>
         <span>{name}</span>
+        
       </p>
     </div>
   );
@@ -34,10 +36,11 @@ export const Pokemones = () => {
   const noVerPokemon = () => setMostrar({ mostrar: false, pokemon: {} });
 
 
+
+
   const busquedaPokemon= async(e)=>{
   e.preventDefault()
     if(!busqueda) return
-
     const pokemon = await searchPokemon(busqueda)
     setMostrar({mostrar:true, pokemon})
   }
@@ -45,7 +48,9 @@ export const Pokemones = () => {
   return (
     <>
       <DetallePokemon {...mostrar} close={noVerPokemon} />
+      
       <Buscador busqueda={busqueda} setBusqueda={setBusqueda}  busquedaPokemon={busquedaPokemon}/>
+
       <InfiniteScroll
         dataLength={pokemones.length}
         next={masPokemones}
